@@ -4,10 +4,7 @@ import { receiveMessage, sendMessage } from '@eventx/api-utils';
 import schemas from './schemas';
 import resolvers from './resolvers';
 
-// receiveMessage();
-
 const startServer = async () => {
-  receiveMessage();
   const graphql = () => {
     return { typeDefs: schemas, resolvers };
   };
@@ -17,6 +14,11 @@ const startServer = async () => {
 
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
+  });
+
+  app.route('/send').get((_req, res) => {
+    sendMessage();
+    res.status(200).end();
   });
 };
 
