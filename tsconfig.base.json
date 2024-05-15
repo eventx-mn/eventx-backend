@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@eventx/api-utils": ["libs/api-utils/src/index.ts"],
-      "core": ["libs/core/src/index.ts"],
       "mongodb": ["libs/mongodb/src/index.ts"]
     }
   },

@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-RUN npm run build:auth-service
+RUN npm run build:event
 
 FROM node:18-alpine as production
 ENV NODE_ENV=production
@@ -14,7 +14,7 @@ ENV NODE_ENV=production
 USER node
 WORKDIR /app
 
-COPY --from=development /app/dist/apps/auth-service ./
+COPY --from=development /app/dist/apps/event ./
 # RUN npm install --only=production
 
-# CMD ["npx", "nx", "run", "auth-service:serve"]
+# CMD ["npx", "nx", "run", "core:serve"]

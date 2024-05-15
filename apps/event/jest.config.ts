@@ -1,10 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'auth-service-e2e',
+  displayName: 'event',
   preset: '../../jest.preset.js',
-  globalSetup: '<rootDir>/src/support/global-setup.ts',
-  globalTeardown: '<rootDir>/src/support/global-teardown.ts',
-  setupFiles: ['<rootDir>/src/support/test-setup.ts'],
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': [
@@ -15,5 +12,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/auth-service-e2e',
+  coverageDirectory: '../../coverage/event',
 };

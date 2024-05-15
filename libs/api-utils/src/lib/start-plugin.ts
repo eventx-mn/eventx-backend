@@ -1,30 +1,28 @@
 import { ApolloServer } from '@apollo/server';
-import express, { Express } from 'express';
 import { buildSubgraphSchema } from '@apollo/subgraph';
-import { expressMiddleware } from '@apollo/server/express4';
-const app = express();
+import { startStandaloneServer } from '@apollo/server/standalone';
 
-app.use(express.json({ limit: '15mb' }));
-app.use(express.urlencoded({ limit: '15mb', extended: true }));
+export async function startApolloServer({
+  graphql,
+  port,
+}: {
+  graphql: any;
+  port: number;
+}) {
+  const { typeDefs, resolvers } = await graphql();
 
-export async function startPlugin(configs: any): Promise<Express> {
-  const generateApolloServer = async () => {
-    const { typeDefs, resolvers } = await configs.graphql();
+  const apolloServer = new ApolloServer({
+    schema: buildSubgraphSchema([
+      {
+        typeDefs,
+        resolvers,
+      },
+    ]),
+  });
 
-    return new ApolloServer({
-      schema: buildSubgraphSchema([
-        {
-          typeDefs,
-          resolvers,
-        },
-      ]),
-    });
-  };
+  const { url } = await startStandaloneServer(apolloServer, {
+    listen: { port },
+  });
 
-  const apolloServer = await generateApolloServer();
-  await apolloServer.start();
-
-  app.use('/graphql', expressMiddleware(apolloServer));
-
-  return app;
+  console.log(`🚀  Server ready at: ${url}`);
 }
