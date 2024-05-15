@@ -6,7 +6,6 @@
   },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudAccessToken": "YjVkNzk4MjItNjUxOC00OTBjLWI1Y2YtMDczNmQ1MGIxYTZlfHJlYWQtd3JpdGU=",
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
@@ -66,5 +65,6 @@
       "dependsOn": ["^build"],
       "inputs": ["default", "^default"]
     }
-  }
+  },
+  "nxCloudAccessToken": "ZTQwMDM4ZTktMGExMC00YzcxLWExZDctZWU3MThhNzJlODhifHJlYWQtd3JpdGU="
 }

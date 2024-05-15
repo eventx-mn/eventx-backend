@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-RUN npm run build:event
+RUN npm run build:events
 
 FROM node:18-alpine as production
 ENV NODE_ENV=production
@@ -14,7 +14,7 @@ ENV NODE_ENV=production
 USER node
 WORKDIR /app
 
-COPY --from=development /app/dist/apps/event ./
+COPY --from=development /app/dist/apps/events ./
 # RUN npm install --only=production
 
-# CMD ["npx", "nx", "run", "core:serve"]
+# CMD ["npx", "nx", "run", "events:serve"]

@@ -1,7 +1,7 @@
 {
-  "name": "event",
+  "name": "events",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/event/src",
+  "sourceRoot": "apps/events/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -9,14 +9,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "event:build"
+        "buildTarget": "events:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "event:build:development"
+          "buildTarget": "events:build:development"
         },
         "production": {
-          "buildTarget": "event:build:production"
+          "buildTarget": "events:build:production"
         }
       }
     },
@@ -26,13 +26,13 @@
       "options": {
         "engine": "docker",
         "metadata": {
-          "images": ["core"],
+          "images": ["events"],
           "load": true,
           "tags": [
             "type=schedule",
-            "type=ref,event=branch",
-            "type=ref,event=tag",
-            "type=ref,event=pr",
+            "type=ref,events=branch",
+            "type=ref,events=tag",
+            "type=ref,events=pr",
             "type=sha,prefix=sha-"
           ]
         }

@@ -18,7 +18,7 @@ const startGateway = async () => {
         url: 'http://localhost:4001',
       },
       {
-        name: 'event',
+        name: 'events',
         url: 'http://localhost:4002',
       },
     ],
