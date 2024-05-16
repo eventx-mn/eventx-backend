@@ -10,6 +10,8 @@ on:
     paths:
       - 'apps/core/**'
       - '.github/workflows/core.yaml'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   build:
@@ -18,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - run: npm ci
       - run: npm test
 
