@@ -1,4 +1,4 @@
-name: Docker
+name: Core deployment
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -7,9 +7,9 @@ name: Docker
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
     # Publish semver tags as releases.
-    tags: ['v*.*.*']
     paths:
       - 'apps/core/**'
       - '.github/workflows/core-deployment.yaml'
