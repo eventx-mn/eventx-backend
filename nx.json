@@ -1,9 +1,5 @@
 {
-  "pluginsConfig": {
-    "@nx/js": {
-      "analyzeSourceFiles": true
-    }
-  },
+  "pluginsConfig": { "@nx/js": { "analyzeSourceFiles": true } },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "plugins": [
@@ -24,18 +20,8 @@
         "previewTargetName": "preview"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } },
     {
       "plugin": "@nx/cypress/plugin",
       "options": {
@@ -47,12 +33,7 @@
     }
   ],
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    }
+    "@nx/next": { "application": { "style": "css", "linter": "eslint" } }
   },
   "targetDefaults": {
     "@nx/js:tsc": {
@@ -66,5 +47,5 @@
       "inputs": ["default", "^default"]
     }
   },
-  "nxCloudAccessToken": "ZTQwMDM4ZTktMGExMC00YzcxLWExZDctZWU3MThhNzJlODhifHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NGI1MTM5ODYtODU5Ny00ZjI2LTg2NTgtODA3YzQxYzM1ZmFmfHJlYWQtd3JpdGU="
 }
