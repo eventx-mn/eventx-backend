@@ -12,7 +12,7 @@ on:
     # Publish semver tags as releases.
     paths:
       - 'apps/core/**'
-      - '.github/workflows/core-deployment.yaml'
+      - '.github/workflows/core-deployment.yml'
   pull_request:
     branches: ['main']
 

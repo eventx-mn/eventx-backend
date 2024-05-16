@@ -9,7 +9,7 @@ on:
       - dev
     paths:
       - 'apps/core/**'
-      - '.github/workflows/core.yaml'
+      - '.github/workflows/core.yml'
       - 'package.json'
       - 'package-lock.json'
 
