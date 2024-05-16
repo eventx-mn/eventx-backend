@@ -8,7 +8,7 @@ name: Core deployment
 on:
   push:
     branches:
-      - main
+      - dev
     # Publish semver tags as releases.
     paths:
       - 'apps/core/**'
