@@ -3,6 +3,9 @@ FROM node:18-alpine as development
 WORKDIR /app
 
 COPY package*.json ./
+
+RUN cd ../../
+
 RUN npm install
 COPY . .
 
@@ -17,4 +20,4 @@ WORKDIR /app
 COPY --from=development /app/dist/apps/core ./
 # RUN npm install --only=production
 
-# CMD ["npx", "nx", "run", "core:serve"]
+CMD ["npx", "nx", "run", "core:serve"]
