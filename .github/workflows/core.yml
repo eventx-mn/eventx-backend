@@ -6,7 +6,7 @@ name: Core Package
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - 'apps/core/**'
       - '.github/workflows/core.yaml'
