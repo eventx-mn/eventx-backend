@@ -2,6 +2,10 @@
   "name": "eventx",
   "version": "0.0.0",
   "license": "MIT",
+  "scripts": {
+    "build:core": "nx build core",
+    "serve:core": "nx serve core"
+  },
   "dependencies": {
     "@apollo/gateway": "^2.7.7",
     "@apollo/server": "^4.10.4",
